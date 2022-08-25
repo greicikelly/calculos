@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2>IMC</h2>
+        <div class="divBase">
+        <H3> Digite seu peso  </H3>
+        <input id="i1" type="number"/>
+        </div>
+        <div class="divAltura">
+        <h3> Digite sua altura </h3> 
+        <input id="i2"type="number"/>
+        <input type="button" id="i3" value="Calcular">
+        <div id="i4"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>Qual triângulo é ?</h2>
+        <div class="divBase">
+        <H3> Digite um lado do triângulo </H3>
+        <input id="t1" type="number"/>
+        </div>
+        <div class="divBase">
+            <H3> Digite outro lado do triângulo </H3>
+            <input id="t2" type="number"/>
+            </div>
+        <div class="divAltura">
+        <h3> Digite outro lado do triângulo </h3> 
+        <input id="t3"type="number"/>
+        <input type="button" id="t4" value="Calcular">
+        <div id="t5"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>É um triângulo retângulo ?</h2>
+        <div class="divBase">
+        <H3> Digite A </H3>
+        <input id="r1" type="number"/>
+        </div>
+        <div class="divBase">
+            <H3> Digite B </H3>
+            <input id="r2" type="number"/>
+            </div>
+        <div class="divAltura">
+        <h3> Digite C </h3> 
+        <input id="r3"type="number"/>
+        <input type="button" id="r4" value="Calcular">
+        <div id="r5"></div>
+        </div> 
+    </main>    
+    <br>
+    <br>
+    <hr>
+    <h2>Quem é maior ?</h2>
+    <main>
+        <div class="divBase">
+        <H3> Digite o primeiro valor </H3>
+        <input id="a1" type="number"/>
+        </div>
+        <div class="divAltura">
+        <h3> Digite o segundo valor </h3> 
+        <input id="a2"type="number"/>
+        <input type="button" id="a3" value="Calcular">
+        <div id="a4"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>Tabuada</h2>
+        <div class="divBase">
+        <H3> Digite o 1° valor </H3>
+        <input id="b1" type="number"/>
+        </div>
+        <div class="divAltura">
+        <h3> Digite o 2° valor </h3> 
+        <input id="b2"type="number"/>
+        <input type="button" id="b3" value="Calcular">
+        <div id="b4"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <a href="lobby.html"><h1>↩</h1></a>
+    <script>
+        var ix1 = document.getElementById('i1');
+        var ix2 = document.getElementById('i2');
+        var ix3 = document.getElementById('i3');
+        var ix4 = document.getElementById('i4');
+        var tx1 = document.getElementById('t1');
+        var tx2 = document.getElementById('t2');
+        var tx3 = document.getElementById('t3');
+        var tx4 = document.getElementById('t4');
+        var tx5 = document.getElementById('t5');
+        var rx1 = document.getElementById('r1');
+        var rx2 = document.getElementById('r2');
+        var rx3 = document.getElementById('r3');
+        var rx4 = document.getElementById('r4');
+        var rx5 = document.getElementById('r5');
+        var ax1 = document.getElementById('a1');
+        var ax2 = document.getElementById('a2');
+        var ax3 = document.getElementById('a3');
+        var ax4 = document.getElementById('a4');
+        var bx1 = document.getElementById('b1');
+        var bx2 = document.getElementById('b2');
+        var bx3 = document.getElementById('b3');
+        var bx4 = document.getElementById('b4');
+        ix3.addEventListener('click', () => {
+            var ixn1 = Number(ix1.value);
+            var ixn2 = Number(ix2.value);
+            var R = ixn1/ixn2^2;
+            if (R < 20) {
+                ix4.innerHTML = `Seu peso está abaixo do ideal !`;
+            } else if(R <= 20 && R < 25) {
+                ix4.innerHTML = `Você tem o peso ideal !`;
+            } else {
+                ix4.innerHTML = `Acima do peso !`;
+            }
+        })
+        tx4.addEventListener('click', () => {
+            var txn1 = Number(tx1.value);
+            var txn2 = Number(tx2.value);
+            var txn3 = Number(tx3.value);
+            var s1 = txn1 + txn2;
+            var s2 = txn1 + txn3;
+            var s3 = txn3 + txn2;
+            if(s1 < txn3 || s2 < txn2 || s3 < txn1 ) {
+                window.alert("[ERRO]");
+                window.alert("Isto não é um triângulo!");
+                window.alert("Digite os valores novamente!");
+            } else {
+            if(txn1 != txn2 && txn1 != txn3 && txn2 != txn3) {
+                tx5.innerHTML = `O triângulo é<strong>escaleno.</strong>`;
+            }else if(txn1 == txn2 && txn2 == txn3){
+                tx5.innerHTML = `O triângulo é<strong>equilátero.</strong>`;
+            }else {
+                tx5.innerHTML = `O triângulo é<strong>isósceles.</strong>`;
+            } 
+        }
+        }) 
+        rx4.addEventListener('click', () => {
+            var rxn1 = Number(rx1.value);
+            var rxn2 = Number(rx2.value);
+            var rxn3 = Number(rx3.value);
+            var s1 = (rxn2*rxn2) + (rxn3*rxn3);
+            var s2 = (rxn1*rxn1) + (rxn2*rxn2);
+            var s3 = (rxn1*rxn1) + (rxn2*rxn2);
+            if(s1 == (rxn1*rxn1) || (rxn3*rxn3) == s2 || (rxn2*rxn2) == s3) {
+                rx5.innerHTML = `Este é um triângulo retângulo.`;
+            } else {
+                rx5.innerHTML = `Este não é um triângulo retângulo.`;
+            }
+        })
+        ax3.addEventListener('click', () => {
+            var axn1 = Number(ax1.value);
+            var axn2 = Number(ax2.value);
+            if(axn1 >= axn2) {
+                axn2 = Number(window.prompt("[ERRO DIGITE ALGO VALIDO]"));
+                while(IsNaN(axn2) == true || axn1 >= axn2 ) {
+                    axn2 = Number(window.prompt("[ERRO DIGITE ALGO VALIDO]"));
+                    ax4.innerHTML = `O segundo (${axn2}) valor é maior que o primeiro.`;
+                }
+            }
+            ax4.innerHTML = `O segundo (${axn2}) valor é maior que o primeiro.`;
+        }) 
+        bx3.addEventListener('click', () => {
+            var bxn1 = Number(bx1.value);
+            var bxn2 = Number(bx2.value);
+            if (bxn1 < 0 || bxn2 <= 0) {
+                window.alert("[ERRO]");
+                bx4.innerHTML = `O código não será executado enquanto <br> não ser digitado valores positivos ou validos`;
+            } else {
+                bx4.innerHTML = ``;
+            for(var i = 1; i <= bxn2; i++) {
+                bx4.innerHTML += `${bxn1} x ${i} = ${bxn1*i} <br>`
+            }
+        }
+        })
+    </script>
+</body>
+</html>

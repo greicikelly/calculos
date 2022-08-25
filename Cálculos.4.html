@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculando</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2>Tabuada</h2>
+        <div class="divBase">
+        <H3> Digite o primeiro valor </H3>
+        <input id="p1" type="number"/>
+        </div>
+        <div class="divBase">
+            <H3> Digite  o segundo valor </H3>
+            <input id="p2" type="number"/>
+            </div>
+        <div class="divAltura">
+        <h3> Digite o terceiro valor </h3> 
+        <input id="p3"type="number"/>
+        <input type="button" id="p4" value="Calcular">
+        <div id="p5"></div>
+         
+   </main>
+    <br>
+    <br>
+    <hr>
+  <main>
+    <h2>Soma dos intervalos de um a cem</h2>
+    <div class="divAltura">
+        <h3> Digite o primeiro valor </h3> 
+        <input id="z1"type="number"/>
+        <input type="button" id="z2" value="Calcular">
+        <div id="z3"></div>
+        </div> 
+    </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>Fibonacci</h2>
+        <div class="divAltura">
+            <h3> Digite a repetição </h3> 
+            <input id="d1"type="number"/>
+            <input type="button" id="d2" value="Calcular">
+            <div id="d3"></div>
+            </div> 
+        </main>
+    <br>
+    <br>
+    <hr>
+    <a href="lobby.html"><h1>↩</h1></a>
+    <script>
+        var px1 = document.getElementById('p1');
+        var px2 = document.getElementById('p2');
+        var px3 = document.getElementById('p3');
+        var px4 = document.getElementById('p4');
+        var px5 = document.getElementById('p5');
+        var zx1 = document.getElementById('z1');
+        var zx2 = document.getElementById('z2');
+        var zx3 = document.getElementById('z3');
+        var dx1 = document.getElementById('d1');
+        var dx2 = document.getElementById('d2');
+        var dx3 = document.getElementById('d3');
+        px4.addEventListener('click', () => {
+            var pxn1 = Number(px1.value);
+            var pxn2 = Number(px2.value);
+            var pxn3 = Number(px3.value);
+        })
+        zx2.addEventListener('click', () => {
+            var zxn1 = Number(zx1.value);
+            var acumuladora = 0;
+            for(var i=1; acumuladora < zxn1; i++) {
+                acumuladora += i;
+                zx3.innerHTML += `${acumuladora} <br>`;
+            }
+        })
+        dx2.addEventListener('click', () => {
+            var dxn1 = Number(dx1.value);
+            var ant = 0;
+            var atb = 1;
+            var c = 0;
+            for(var f = 1; f <= dxn1; f++) {
+                dx3.innerHTML += `${ant} <br>`;
+                c = ant;
+                ant += atb;
+                atb = c;
+            }
+        })
+    </script>
+</body>
+</html>

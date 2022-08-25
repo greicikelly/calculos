@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CÁLCULOS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main>
+        <h2>Área do Retângulo</h2>
+        <div class="divBase">
+        <H3> Base </H3>
+        <input id="ns" type="number"/>
+        </div>
+        <div class="divAltura">
+        <h3> Altura </h3> 
+        <input id="nd"type="number"/>
+        <input type="button" id="bo" value="Calcular">
+        <div id="res"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>Área do Quadrado</h2>
+        <div class="divBase">
+        <H3> Aresta </H3>
+        <input id="qua" type="number"/>
+        <input type="button" id="bu" value="Calcular">
+        <div id="ret"></div>
+        </div>
+        <div class="divAltura">
+        <h3> Diagonal </h3> 
+        <input id="dia"type="number"/>
+        <input type="button" id="bv" value="Calcular">
+        <div id="nn"></div>
+        </div> 
+    </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>Área do Triângulo</h2>
+        <div class="divBase">
+        <H3> Base </H3>
+        <input id="t1" type="number"/>
+        </div>
+        <div class="divAltura">
+        <h3> Altura </h3> 
+        <input id="t2"type="number"/>
+        <input type="button" id="t3" value="Calcular">
+        <div class="button" id="t4"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <main>
+        <h2>Média</h2>
+        <div class="divBase">
+        <H3> 1° Valor </H3>
+        <input id="m1" type="number"/>
+        </div>
+        <div class="divBase">
+        <H3> 2° Valor </H3>
+        <input id="m2" type="number"/>
+        </div>
+        <div class="divAltura">
+        <H3> 3° Valor </H3>
+        <input id="m3" type="number"/>
+        </div>
+        <div class="divAltura">
+        <h3> 4° Valor </h3> 
+        <input id="m4"type="number"/>
+        <input class="button" type="button" id="m5" value="Calcular">
+        <div id="m6"></div>
+        </div> 
+   </main>
+    <br>
+    <br>
+    <hr>
+    <a href="lobby.html"><h1>↩</h1></a>
+    <script>
+        var ares = document.getElementById('qua')
+        var butao = document.getElementById('bu')
+        var reto = document.getElementById('ret')
+        var dig = document.getElementById('dia')
+        var bvtao = document.getElementById('bv')
+        var n1 = document.getElementById('nn')
+        var ba = document.getElementById('ns')
+        var al = document.getElementById('nd')
+        var resul = document.getElementById('res')
+        var botao = document.getElementById('bo')
+        var tx1 = document.getElementById('t1')
+        var tx2 = document.getElementById('t2')
+        var tx3 = document.getElementById('t3')
+        var tx4 = document.getElementById('t4')
+        var mx1 = document.getElementById('m1')
+        var mx2 = document.getElementById('m2')
+        var mx3 = document.getElementById('m3')
+        var mx4 = document.getElementById('m4')
+        var mx5 = document.getElementById('m5')
+        var mx6 = document.getElementById('m6')
+        botao.addEventListener('click', () => {
+            var bt = Number(ba.value)
+            var at = Number(al.value)
+            resul.innerHTML = `A área do retângulo é : ${bt*at}`
+        })
+        butao.addEventListener('click', () => {
+            var ar = Number(ares.value)
+            reto.innerHTML = `A área do quadrado é : ${ar*ar}`
+        })
+        bv.addEventListener('click', () => {
+            var dig = Number(dia.value)
+            n1.innerHTML = `A área do quadrado é : ${(dig*dig)/2}`
+        })
+        tx3.addEventListener('click', () => {
+            var txn1 = Number(tx1.value)
+            var txn2 = Number(tx2.value)
+            tx4.innerHTML = `A área do triângulo é : ${(txn2*txn1)/2}`
+        })
+        mx5.addEventListener('click', () => {
+            var mxn1 = Number(mx1.value)
+            var mxn2 = Number(mx2.value)            
+            var mxn3 = Number(mx3.value)
+            var mxn4 = Number(mx4.value)
+            mx6.innerHTML = `A média é : ${(mxn1+mxn2+mxn3+mxn4)/4}`
+        })
+    </script>
+</body>
+</html>
